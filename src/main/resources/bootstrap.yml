@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: DepartmentApp
+  cloud:
+    config:
+      uri: http://localhost:8888
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.10.18.18:3306/cloudTest
+    #driver-class-name: org.apache.derby.jdbc.ClientDriver
+    #url: jdbc:derby://localhost:1527/Department;create=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
