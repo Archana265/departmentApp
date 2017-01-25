@@ -35,16 +35,7 @@ public class DepartmentController {
 		return new ResponseEntity<Department>(department, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/department/{id}", method = RequestMethod.GET)
-	public ResponseEntity<List<Department>> getAllDepartment() {
-		List<Department> allDepartments = departmentServiceImpl.findAllDepartments();
-		if (allDepartments.isEmpty()) {
-			System.out.println("No Department found");
-			return new ResponseEntity<List<Department>>(HttpStatus.NOT_FOUND);
-		}
-		return new ResponseEntity<List<Department>>(allDepartments, HttpStatus.OK);
-	}
-
+	
 	@RequestMapping(value = "/department/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Department> updateDepartment(@PathVariable("id") long id,
 			@RequestBody Department department) {
